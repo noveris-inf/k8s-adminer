@@ -1,1 +1,1 @@
-# k8s-adminer
+# kustomize-adminer
