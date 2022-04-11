@@ -1,17 +1,15 @@
----
-name: main
+name: pr
 on:
-  workflow_dispatch:
   push:
-    branches:
-      - main
+    branches-ignore:
+      - "*"
   pull_request:
     branches:
       - main
 
 jobs:
-  Linting:
-    name: "Linting"
+  linting:
+    name: "linting"
     runs-on: ubuntu-latest
 
     steps:
@@ -32,8 +30,8 @@ jobs:
         run: |
           yamllint -f standard .
 
-  Kustomize:
-    name: "Kustomize"
+  kustomize:
+    name: "kustomize"
     runs-on: ubuntu-latest
 
     steps:
